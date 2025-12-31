@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-neutral-950 text-slate-50 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-rose-50/30 via-stone-50 to-neutral-50 text-slate-900 font-sans">
       <div className="mx-auto max-w-6xl px-4 pb-16">
         <Header
           language={language}
@@ -49,8 +49,11 @@ export default function Home() {
           whatsappLink={WHATSAPP_LINK}
         />
         <main className="space-y-8 pb-8 pt-20 sm:pt-24">
-          <Hero messages={messages} />
-          <PromoMarquee language={language} />
+          {/* Desktop hero and promo */}
+          <div className="hidden sm:block">
+            <Hero messages={messages} />
+            <PromoMarquee language={language} />
+          </div>
 
           <section id="catalog" className="space-y-4">
             <div className="flex items-end justify-between gap-4">
@@ -58,7 +61,7 @@ export default function Home() {
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
                   {messages.catalog.title}
                 </h2>
-                <p className="mt-1 text-xs text-slate-300 sm:text-sm">
+                <p className="mt-1 text-xs text-slate-600 sm:text-sm">
                   {messages.catalog.subtitle}
                 </p>
               </div>
@@ -80,6 +83,11 @@ export default function Home() {
 
           <FAQ language={language} messages={messages} />
         </main>
+
+        {/* Mobile-only hero at bottom */}
+        <div className="sm:hidden">
+          <Hero messages={messages} isMobileBottom={true} />
+        </div>
 
         <Footer language={language} messages={messages} />
       </div>

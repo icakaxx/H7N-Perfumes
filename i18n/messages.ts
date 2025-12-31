@@ -74,8 +74,8 @@ export function getMessages(lang: Language) {
     },
     footer: {
       rights: isBg
-        ? "© " + new Date().getFullYear() + " H7N Perfumes. Всички права запазени."
-        : "© " + new Date().getFullYear() + " H7N Perfumes. All rights reserved.",
+        ? "© 2026 H7N Perfumes. Всички права запазени."
+        : "© 2026 H7N Perfumes. All rights reserved.",
       privacy: isBg ? "Поверителност" : "Privacy",
       terms: isBg ? "Условия" : "Terms",
       limitedOffer: isBg

@@ -21,12 +21,12 @@ export function PromoMarquee({ language }: PromoMarqueeProps) {
   return (
     <section
       aria-label={isBg ? "Промо комплект" : "Bundle promotion"}
-      className="relative mt-4 overflow-hidden rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-amber-400/10 to-amber-500/20"
+      className="relative mt-4 overflow-hidden rounded-2xl border border-rose-200 bg-gradient-to-r from-rose-50 via-rose-50/50 to-rose-50"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(250,250,250,0.22),_transparent_55%)] opacity-70" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.5),_transparent_55%)] opacity-50" />
 
       <div className="relative flex items-center gap-4 px-3 py-3 sm:px-4">
-        <div className="hidden h-16 w-16 flex-none items-center justify-center overflow-hidden rounded-xl border border-white/15 bg-black/40 text-[10px] text-slate-200 sm:flex">
+        <div className="hidden h-16 w-16 flex-none items-center justify-center overflow-hidden rounded-xl border border-rose-200 bg-white text-[10px] text-slate-700 sm:flex">
           <span>{isBg ? "Дамски" : "Women"}</span>
         </div>
 
@@ -36,13 +36,13 @@ export function PromoMarquee({ language }: PromoMarqueeProps) {
               {Array.from({ length: 3 }).map((_, index) => (
                 <p
                   key={index}
-                  className="flex items-center gap-3 text-xs font-medium text-amber-50 sm:text-sm"
+                  className="flex items-center gap-3 text-xs font-medium text-rose-900 sm:text-sm"
                 >
-                  <span className="rounded-full bg-black/40 px-3 py-1 text-[11px] text-amber-200">
+                  <span className="rounded-full bg-white px-3 py-1 text-[11px] text-rose-700 font-semibold">
                     ПРОМОЦИЯ! САМО СЕГА!
                   </span>
                   <span>{text}</span>
-                  <span className="text-[11px] text-amber-100/80">
+                  <span className="text-[11px] text-rose-700/70">
                     {isBg ? "Спести повече, комбинирай дамски и мъжки." : "Save more when you pair women's and men's scents."}
                   </span>
                 </p>
@@ -51,7 +51,7 @@ export function PromoMarquee({ language }: PromoMarqueeProps) {
           </div>
         </div>
 
-        <div className="hidden h-16 w-16 flex-none items-center justify-center overflow-hidden rounded-xl border border-white/15 bg-black/40 text-[10px] text-slate-200 sm:flex">
+        <div className="hidden h-16 w-16 flex-none items-center justify-center overflow-hidden rounded-xl border border-rose-200 bg-white text-[10px] text-slate-700 sm:flex">
           <span>{isBg ? "Мъжки" : "Men"}</span>
         </div>
       </div>

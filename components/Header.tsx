@@ -14,23 +14,23 @@ export function Header({ language, onLanguageChange, messages, whatsappLink }: H
   const isBg = language === "bg";
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 border-b border-white/5 bg-black/80 backdrop-blur-md">
+    <header className="fixed left-0 right-0 top-0 z-40 border-b border-gray-200 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-3">
-          <h1 className="text-sm font-semibold text-slate-50 sm:text-base">
+          <h1 className="text-sm font-semibold text-slate-900 sm:text-base">
             {messages.header.logo}
           </h1>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 text-xs">
+          <div className="flex items-center gap-1 rounded-full border border-gray-200 bg-gray-50 p-1 text-xs">
             <button
               type="button"
               onClick={() => onLanguageChange("bg")}
               className={`rounded-full px-2.5 py-1 transition ${
                 language === "bg"
-                  ? "bg-amber-400 text-black"
-                  : "text-slate-300 hover:text-slate-50"
+                  ? "bg-rose-400 text-black"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               {messages.header.languageBg}
@@ -40,8 +40,8 @@ export function Header({ language, onLanguageChange, messages, whatsappLink }: H
               onClick={() => onLanguageChange("en")}
               className={`rounded-full px-2.5 py-1 transition ${
                 language === "en"
-                  ? "bg-amber-400 text-black"
-                  : "text-slate-300 hover:text-slate-50"
+                  ? "bg-rose-400 text-black"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               {messages.header.languageEn}

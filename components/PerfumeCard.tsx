@@ -31,14 +31,14 @@ export function PerfumeCard({ perfume, language, onOrder, onDetails }: PerfumeCa
   ].slice(0, 5);
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950/80 via-black to-zinc-900/70 shadow-lg shadow-black/50">
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md hover:shadow-lg transition-shadow">
       <button
         type="button"
         onClick={() => onDetails(perfume)}
         className="group relative block overflow-hidden"
         aria-label={perfume.name[language]}
       >
-        <div className="aspect-[4/5] w-full bg-gradient-to-br from-zinc-800/80 via-zinc-900 to-black relative overflow-hidden">
+        <div className="aspect-[4/5] w-full bg-gray-100 relative overflow-hidden">
           <Image
             src={perfume.image}
             alt={perfume.name[language]}
@@ -47,20 +47,20 @@ export function PerfumeCard({ perfume, language, onOrder, onDetails }: PerfumeCa
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-        <div className="pointer-events-none absolute left-2 top-2 rounded-full bg-black/70 px-2 py-1 text-[11px] font-medium text-slate-100 ring-1 ring-white/15">
+        <div className="pointer-events-none absolute left-2 top-2 rounded-full bg-white/90 backdrop-blur-sm px-2 py-1 text-[11px] font-medium text-slate-700 ring-1 ring-gray-200">
           {genderLabel}
         </div>
-        <div className="pointer-events-none absolute right-2 top-2 rounded-full bg-emerald-400/90 px-2 py-1 text-[11px] font-semibold text-black shadow-md shadow-emerald-500/40">
+        <div className="pointer-events-none absolute right-2 top-2 rounded-full bg-emerald-400 px-2 py-1 text-[11px] font-semibold text-white shadow-md shadow-emerald-500/40">
           {discountLabel}
         </div>
       </button>
 
       <div className="flex flex-1 flex-col gap-2 p-3">
         <div>
-          <h3 className="text-sm font-semibold text-slate-50">
+          <h3 className="text-sm font-semibold text-slate-900">
             {perfume.name[language]}
           </h3>
-          <p className="mt-1 line-clamp-2 text-xs text-slate-300">
+          <p className="mt-1 line-clamp-2 text-xs text-slate-600">
             {perfume.summary[language]}
           </p>
         </div>
@@ -69,7 +69,7 @@ export function PerfumeCard({ perfume, language, onOrder, onDetails }: PerfumeCa
           {noteChips.map((note, index) => (
             <span
               key={note[language] + index}
-              className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] text-slate-200"
+              className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] text-slate-700"
             >
               {note[language]}
             </span>
@@ -77,7 +77,7 @@ export function PerfumeCard({ perfume, language, onOrder, onDetails }: PerfumeCa
           {perfume.vibeTags.slice(0, 2).map((tag) => (
             <span
               key={tag[language]}
-              className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] text-amber-100"
+              className="rounded-full bg-rose-50 px-2 py-0.5 text-[10px] text-rose-700"
             >
               {tag[language]}
             </span>
@@ -86,9 +86,9 @@ export function PerfumeCard({ perfume, language, onOrder, onDetails }: PerfumeCa
 
         <div className="mt-1 flex items-end justify-between gap-2">
           <div>
-            <div className="flex items-baseline gap-1 text-sm font-semibold text-amber-100">
+            <div className="flex items-baseline gap-1 text-sm font-semibold text-rose-600">
               <span>€{eur}</span>
-              <span className="text-xs text-amber-100/80">· {bgn.toFixed(2)} лв</span>
+              <span className="text-xs text-rose-600/80">· {bgn.toFixed(2)} лв</span>
             </div>
             <div className="flex items-baseline gap-1 text-[11px] text-slate-400">
               <span className="line-through">€{oldEur}</span>
@@ -101,14 +101,14 @@ export function PerfumeCard({ perfume, language, onOrder, onDetails }: PerfumeCa
           <button
             type="button"
             onClick={() => onOrder(perfume)}
-            className="flex-1 rounded-full bg-amber-400 px-3 py-2 text-center text-xs font-semibold text-black shadow-md shadow-amber-500/40 active:scale-[0.97]"
+            className="flex-1 rounded-full bg-gradient-to-r from-rose-400 to-rose-500 px-3 py-2 text-center text-xs font-semibold text-white shadow-md shadow-rose-500/30 active:scale-[0.97]"
           >
             {orderLabel}
           </button>
           <button
             type="button"
             onClick={() => onDetails(perfume)}
-            className="flex-1 rounded-full border border-white/15 bg-transparent px-3 py-2 text-center text-xs font-semibold text-slate-100 hover:bg-white/5 active:scale-[0.97]"
+            className="flex-1 rounded-full border border-gray-300 bg-transparent px-3 py-2 text-center text-xs font-semibold text-slate-700 hover:bg-gray-50 active:scale-[0.97]"
           >
             {detailsLabel}
           </button>

@@ -18,7 +18,7 @@ export function CategoryTabs({ language, current, onChange }: CategoryTabsProps)
   ];
 
   return (
-    <div className="inline-flex rounded-full border border-white/10 bg-white/5 p-1 text-xs text-slate-200">
+    <div className="inline-flex rounded-full border border-gray-200 bg-gray-100 p-1 text-xs text-slate-700">
       {tabs.map((tab) => {
         const active = tab.id === current;
         return (
@@ -28,7 +28,7 @@ export function CategoryTabs({ language, current, onChange }: CategoryTabsProps)
             onClick={() => onChange(tab.id)}
             className={`flex-1 rounded-full px-3 py-1.5 transition ${
               active
-                ? "bg-amber-400 text-black shadow-sm shadow-amber-500/40"
+                ? "bg-rose-400 text-black shadow-sm shadow-rose-500/40"
                 : "hover:bg-white/5"
             }`}
           >
